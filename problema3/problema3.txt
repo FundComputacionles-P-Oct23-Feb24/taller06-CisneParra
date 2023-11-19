@@ -1,29 +1,27 @@
 Inicio
-informacion, x(100)[{a-z},{A-Z},{BS}]
 empleados, x(100)[{a-z},{A-Z},{BS}]
 empleados <--""
-nombreempleado, x(100)[{a-z},{A-Z},{BS}]
-contadorempleados, i[0-n]
-contadorempleados <--1
-diastrabajo, i[0-n]
-diastrabajo <--0
+nombre, x(100)[{a-z},{A-Z},{BS}]
+contador, i[0-n]
+contador <--1
+dias, i[0-n]
+dias <--0
 costodia, d[0-n]
 costodia <--0
-total, d[0-n]
+totalcosto, d[0-n]
 costohora, d[0-n]
 costohora <--0
-Mientras contadorempleados <=5 entonces
- << "Ingrese el nombre del empleado " + contadorempleados
- >> nombreempleado
+Mientras contador <=5 entonces
+ << "Ingrese el nombre del empleado #" + contador
+ >> nombre
  << "Ingrese el número de dias trabajados"
- >> diastrabajo
+ >> dias
  << "Ingrese el costo por dia de trabajo"
  >> costodia
- total <-- diastrabajo * costodia
- costohora <-- costodia/(diastrabajo/24)
- informacion <--(nombreempleado + ":dias" + diastrabajo + ", costo por hora $" + costohora + "Total $" + total +"\n")
- contadorempleado <--contadorempleado+1
- empleados = empleados + informacion
+ totalcosto <-- dias * costodia
+ costohora <-- costodia/(dias/24)
+ empleados <--(nombre + ":dias" + dias + ", costo por hora $" + costohora + "Total $" + total +"\n")
+ contador <--contadorempleado+1
 Fin Mientras
 << empleados
 Fin
