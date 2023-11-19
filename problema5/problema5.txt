@@ -1,11 +1,8 @@
 Inicio
 nombre, x(100)[{a-z},{A-Z},{BS}]
-asignacion, x(100)[{a-z},{A-Z},{BS}]
-asignacion <--""
-estudiantes, x(100)[{a-z},{A-Z},{BS}]
-estudiantes <--"Listado de estudiantes:\n"
+resultado, x(100)[{a-z},{A-Z},{BS}]
 fichafinal, x(100)[{a-z},{A-Z},{BS}]
-fichafinal <--" "
+fichafinal <--"Listado de estudiantes:\n"
 contador, i[0-n]
 contador <--1
 promedio, d[0-n]
@@ -16,13 +13,12 @@ Mientras contador <=4 entonces
  << "Ingrese el promedio del estudiante"
  >> promedio
   Si promedio >=7 entonces
-   asignacion <--"Aprobado"
+   resultado <--"Aprobado"
   De lo contrario
-   asignacion <--"Reprobado"
+   resultado <--"Reprobado"
   Fin Si
- estudiantes <--estudiantes + nombre + "con nota: " + promedio + "es " + asignacion + " "
+ fichafinal <--fichafinal + nombre + "con nota: " + promedio + "es " + resultado + " "
  contador <-- contador +1
 Fin Mientras
-fichafinal <-- fichafinal + estudiantes
 << fichafinal
 Fin
